@@ -5,7 +5,7 @@
 Aplicación web desarrollada con Flask que recibe datos de los ejes X e Y desde una aplicación móvil via TCP, y los representa visualmente en 3 vistas diferentes en el navegador.
 
 ## ¿Cómo funciona?
-La app móvil actúa como servidor TCP enviando los valores del acelerómetro del celular en formato `X:valor,Y:valor`. Flask se conecta, lee los datos y los representa en la vista seleccionada. La página se actualiza automáticamente cada 2 segundos.
+La app móvil actúa como servidor TCP enviando los valores del acelerómetro del celular en formato `X:valor,Y:valor`. Flask se conecta, lee los datos y los representa en la vista seleccionada. La página se actualiza automáticamente cada 0.5 segundos.
 
 ## Vistas disponibles
 - **Matriz 4x4** — La celda activa se ilumina en rojo según la posición del dispositivo
