@@ -3,7 +3,7 @@ import socket
 
 app = Flask(__name__)
 
-HOST = "192.168.1.15"  ## IP del celular
+HOST = "192.168.0.104"  ## IP del celular
 PORT = 12345             ## Puerto del servidor
 
 def leer_sensor():
@@ -26,8 +26,8 @@ def mapear(valor, min_val, max_val, min_out, max_out):
 @app.route('/')
 def index():
     ejeY, ejeX = leer_sensor()
-    colX = max(0, min(3, mapear(ejeX, -20, 20, 0, 3)))
-    filY = max(0, min(3, mapear(ejeY, -20, 20, 3, 0)))
+    colX = max(0, min(3, mapear(ejeX, -10,10,0, 3)))
+    filY = max(0, min(3, mapear(ejeY, -10,10,0, 3)))
     return render_template('index.html', ejeX=ejeX, ejeY=ejeY, colX=colX, filY=filY)
 
 if __name__ == '__main__':
