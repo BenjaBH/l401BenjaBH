@@ -22,7 +22,7 @@ La app móvil actúa como servidor TCP enviando los valores del acelerómetro de
 
 ## Tecnologías usadas
 - Python + Flask
-- HTML + CSS + Jinja2
+- HTML + CSS 
 - Comunicación TCP con app móvil (APK)
 
 ## Cómo ejecutar
