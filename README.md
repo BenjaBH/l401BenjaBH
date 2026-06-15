@@ -1,107 +1,26 @@
-# Actividad Base: Flask + DataXY
+# Visualización de Datos X-Y con Flask
+### Benjamín Badilla — DCSH01, INACAP
 
-Este repositorio es un ejemplo inicial para practicar con **Flask** y **GitHub**.
-La intensión es que los estudiantes lo usen como punto de partida, lo modifiquen y luego lo suban a su propio repositorio.
+## Descripción
+Aplicación web desarrollada con Flask que recibe datos de los ejes X e Y desde una aplicación móvil via TCP, y los representa visualmente en una grilla 4x4 en el navegador.
 
----
+## ¿Cómo funciona?
+La app móvil actúa como servidor TCP enviando los valores del acelerómetro del celular en formato `X:valor,Y:valor`. Flask se conecta, lee los datos y los mapea a una celda dentro de una grilla 4x4. La celda activa se ilumina en rojo según la posición del dispositivo. La página se actualiza automáticamente cada 2 segundos.
 
-## Objetivo
+## Cambios realizados al repositorio base
+- Se agregó título de la actividad y nombre del autor en el HTML
+- Se añadió párrafo explicativo sobre el funcionamiento del sistema
+- Se cambió la visualización de 4 cuadrantes (2x2) a una grilla de 4x4
+- Se agregó la función `mapear()` en `app.py` para convertir los valores del acelerómetro a índices de la grilla
+- Se aplicaron colores personalizados (rojo) para la celda activa y estructura visual
 
-* Clonar el repositorio y trabajar en una copia personal
-* Ejecutar Flask y recibir datos **x, y** desde una aplicación móvil
-* Visualizar datos en una página HTML sencilla
-* Subir cambios a GitHub
+## Tecnologías usadas
+- Python + Flask
+- HTML + CSS + Jinja2
+- Comunicación TCP con app móvil (APK)
 
----
-
-## Requisitos
-
-* Entorno para Python y Flask instalados
-* Cuenta en GitHub
-* Aplicación móvil (APK) para enviar datos
-
----
-
-## Descarga de Aplicación APK
-
-Se puede descargar la aplicación móvil desde aquí:
-
-[Descargar XYaTCPfull.apk](./XYaTCPfull.apk)
-
----
-
-## Pasos básicos
-
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/jotaefepece/Actividad-dataXY-base
-cd Actividad-dataXY-base
-```
-
-### 2. Instalar y ejecutar la aplicación apk
-
-```bash
-### La red del celular tiene que estar en la misma red local ###
-```
-
-### 3. Ejecutar Flask
-
-```bash
-python3 app.py
-```
-
-### 4. Probar en el navegador
-
-```
-http://127.0.0.1:5000
-```
-
----
-
-## Estructura del ejercicio
-
-```bash
-.
-├── app.py
-├── capturas
-│   ├── archivos-base.png
-│   └── vista-base.png
-├── README.md
-├── templates
-│   └── index.html
-└── XYaTCPfull.apk
-```
-
----
-
-## Capturas
-
-### Estructura de archivos
-
-![Estructura de los archivos](capturas/archivos-base.png)
-
----
-
-### Vista en el navegador
-
-![Vista HTML](capturas/vista-base.png)
-
----
-
-## Inicio del ejercicio
-
-Cada estudiante debe:
-
-* Crear una pestaña en Flask que muestre un dato recibido
-* Modificar el HTML para encender una celda en un rectángulo **2x2** según los valores **x, y**
-* Subir su versión modificada a su propio repositorio
-
----
-
-## Notas
-
-* Este README es solo una guía básica.
-* El trabajo final depende de cada estudiante y de cómo adapte el ejercicio.
-
----
+## Cómo ejecutar
+1. Conectar el celular y el PC a la misma red WiFi
+2. Abrir la app móvil y activar el servidor TCP
+3. Ejecutar `python app.py`
+4. Abrir `http://localhost:5000` en el navegador
