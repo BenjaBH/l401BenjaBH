@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="0.5"></meta>
+	<style>
+		#pagina{font-family:Arial; padding:2rem;}
+		#titulo{color:red;}
+		#nombre{color:darkred;}
+		#explicacion{width:400px;}
+		#nav a{margin-right:15px; color:red;}
+		#contenedor-x{width:400px; background-color:lightgray; height:40px; margin-bottom:1rem;}
+		#contenedor-y{width:400px; background-color:lightgray; height:40px;}
+		#barra-x{width:{{ barraX }}px; height:40px; background-color:red;}
+		#barra-y{width:{{ barraY }}px; height:40px; background-color:darkred;}
+		#label-x{font-size:16px; color:red;}
+		#label-y{font-size:16px; color:darkred;}
+	</style>
+</head>
+<body id="pagina">
+	<div id="nav">
+		<a href="/">Matriz</a>
+		<a href="/texto">Texto</a>
+		<a href="/barras">Barras</a>
+	</div>
+	<h1 id="titulo">Visualización de Datos X-Y</h1>
+	<h2 id="nombre">Benjamín Badilla</h2>
+	<p id="explicacion">Los valores X e Y del acelerómetro se representan como barras horizontales. El largo de cada barra indica la magnitud del valor.</p>
+	<p id="label-x">Eje X: {{ ejeY }}</p>
+	<div id="contenedor-x"><div id="barra-x"></div></div>
+	<p id="label-y">Eje Y: {{ ejeX }}</p>
+	<div id="contenedor-y"><div id="barra-y"></div></div>
+</body>
+</html>

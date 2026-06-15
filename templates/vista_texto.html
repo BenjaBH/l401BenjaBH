@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="refresh" content="0.5"></meta>
+	<style>
+		#pagina{font-family:Arial; padding:2rem;}
+		#titulo{color:red;}
+		#nombre{color:darkred;}
+		#explicacion{width:400px;}
+		#nav a{margin-right:15px; color:red;}
+		#caja-x{font-size:80px; color:red; text-align:center; border:2px solid red; width:300px; padding:1rem; margin-bottom:1rem;}
+		#caja-y{font-size:80px; color:darkred; text-align:center; border:2px solid darkred; width:300px; padding:1rem;}
+		#label-x{font-size:20px; color:red;}
+		#label-y{font-size:20px; color:darkred;}
+	</style>
+</head>
+<body id="pagina">
+	<div id="nav">
+		<a href="/">Matriz</a>
+		<a href="/texto">Texto</a>
+		<a href="/barras">Barras</a>
+	</div>
+	<h1 id="titulo">Visualización de Datos X-Y</h1>
+	<h2 id="nombre">Benjamín Badilla</h2>
+	<p id="explicacion">Los valores X e Y del acelerómetro se muestran en tiempo real en formato numérico.</p>
+	<p id="label-x">Eje X</p>
+	<div id="caja-x">{{ ejeY }}</div>
+	<p id="label-y">Eje Y</p>
+	<div id="caja-y">{{ ejeX }}</div>
+</body>
+</html>

@@ -26,9 +26,19 @@ def mapear(valor, min_val, max_val, min_out, max_out):
 @app.route('/')
 def index():
     ejeY, ejeX = leer_sensor()
-    colX = max(0, min(3, mapear(ejeX, -10,10,0, 3)))
-    filY = max(0, min(3, mapear(ejeY, -10,10,0, 3)))
+    colX = max(0, min(3, mapear(ejeX, -10, 10, 0, 3)))
+    filY = max(0, min(3, mapear(ejeY, -10, 10, 3, 0)))
     return render_template('index.html', ejeX=ejeX, ejeY=ejeY, colX=colX, filY=filY)
+
+@app.route('/texto')
+def texto():
+    ejeY, ejeX = leer_sensor()
+    return render_template('vista_texto.html', ejeX=ejeX, ejeY=ejeY)
+
+@app.route('/barras')
+def barras():
+    ejeY, ejeX = leer_sensor()
+    return render_template('vista_barras.html', ejeX=ejeX, ejeY=ejeY)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

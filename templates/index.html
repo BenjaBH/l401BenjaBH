@@ -33,12 +33,18 @@
 		#titulo{color:red;}
 		#nombre{color:darkred;}
 		#explicacion{width:400px;}
+		#nav a{margin-right:15px; color:red;}
 	</style>
 </head>
 <body>
+	<div id="nav">
+		<a href="/">Matriz</a>
+		<a href="/texto">Texto</a>
+		<a href="/barras">Barras</a>
+	</div>
 	<h1 id="titulo">Visualización de Datos X-Y</h1>
 	<h2 id="nombre">Benjamín Badilla</h2>
-	<p id="explicacion">Los datos X e Y vienen desde la aplicación móvil. La celda activa se ilumina en rojo según la posición del dispositivo en la grilla 4x4.</p>
+	<p id="explicacion">Los datos X e Y vienen desde la aplicación móvil. La celda activa se ilumina en rojo según la posición del dispositivo en la matriz 4x4.</p>
 	<p>X = {{ ejeY }}</p>
 	<p>Y = {{ ejeX }}</p>
 	<table id="tabla">
